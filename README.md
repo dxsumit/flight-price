@@ -1,4 +1,4 @@
-# flight-price-backend
+# flight-price-frontend
 
 REST API to get prices of different airlines running from source city to destination city on a particular day.<br>
 MongoDB database has been used; API has been hosted on Render.com.<br>
