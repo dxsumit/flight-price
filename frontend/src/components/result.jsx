@@ -11,13 +11,16 @@ const Result = () => {
     const location = useLocation();
 
     // const baseURL = "http://localhost:4000";
-    const baseURL = "https://flight.ced19i028sumit.repl.co";
+    const baseURL = "https://flight-api-40qk.onrender.com";
+    // const baseURL = "https://flight.ced19i028sumit.repl.co";
 
     useEffect( () => {
 
         const getFlights = async () => {
+            const dataObject = location.state;
+            dataObject['date'] = dataObject['date'].toString().slice(4,15);
 
-            const response = await axios.post(`${baseURL}/api/v1/flight/get`, location.state);
+            const response = await axios.post(`${baseURL}/api/v1/flight/get`, dataObject);
             if(response.data.status === "successful"){
                 setFlights(response.data.msg);
             }
@@ -90,9 +93,8 @@ const Result = () => {
                            
                         </tbody>
 
-                        {flights.length === 0 ? "NO result Found": ""}
-
                         </table>
+                        {flights.length === 0 ? "NO result Found": ""}
                     </div>
                     </div>
                 </div>

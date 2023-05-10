@@ -9,7 +9,7 @@ const Signup = () => {
     const [isLoading, setIsLoading] = useState(false);
     const navigate = useNavigate();
     // const baseURL = "http://localhost:4000";
-    const baseURL = "https://flight.ced19i028sumit.repl.co";
+    const baseURL = "https://flight-api-40qk.onrender.com";
 
     const {
         reset,
